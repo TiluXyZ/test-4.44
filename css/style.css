@@ -217,7 +217,8 @@ body::-webkit-scrollbar-thumb:active {
     padding: 5px;
   }
   header .logo img {
-    width: 60px;
+    width: 40px;
+    margin: 0 auto;
   }
   header .logo span {
     display: flex;
@@ -653,7 +654,8 @@ body::-webkit-scrollbar-thumb:active {
     padding: 5px;
   }
   header .logo img {
-    width: 60px;
+    width: 40px;
+    margin: 0 auto;
   }
   header .logo span {
     display: flex;
@@ -1073,7 +1075,7 @@ body::-webkit-scrollbar-thumb:active {
     grid-row: 2/3;
   }
 }
-@media (min-width: 992px) {
+@media screen and (min-width: 992px) {
   header {
     background-color: #00b894;
     position: fixed;
@@ -1084,7 +1086,8 @@ body::-webkit-scrollbar-thumb:active {
     padding: 5px;
   }
   header .logo img {
-    width: 60px;
+    width: 40px;
+    margin: 0 auto;
   }
   header .logo span {
     display: flex;
@@ -1230,7 +1233,7 @@ body::-webkit-scrollbar-thumb:active {
     padding-top: 20px;
   }
   footer .info-footer {
-    padding: 15px 30px;
+    padding: 15px 10px 25px 50px;
   }
   footer .info-footer h3 {
     color: #24e6b2;
@@ -1256,7 +1259,7 @@ body::-webkit-scrollbar-thumb:active {
     color: #00ffcc;
   }
   footer .footer-2 {
-    padding: 15px 10px;
+    padding: 15px 10px 25px;
   }
   footer .footer-2 h3 {
     color: #24e6b2;
@@ -1282,7 +1285,7 @@ body::-webkit-scrollbar-thumb:active {
     color: #00ffcc;
   }
   footer .footer-3 {
-    padding: 15px 10px;
+    padding: 15px 10px 25px;
   }
   footer .footer-3 h3 {
     color: #24e6b2;
@@ -1308,7 +1311,7 @@ body::-webkit-scrollbar-thumb:active {
     color: #00ffcc;
   }
   footer .footer-4 {
-    padding: 15px 10px;
+    padding: 15px 10px 25px;
   }
   footer .footer-4 h3 {
     color: #24e6b2;
