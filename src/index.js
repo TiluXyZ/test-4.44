@@ -1,10 +1,10 @@
 const button = document.querySelectorAll('.info')
 
+const container = document.getElementById('container')
+
 button.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault()
-
-        const container = document.getElementById('container')
 
         const firstDiv = document.createElement('div')
 
@@ -14,6 +14,27 @@ button.forEach(link => {
         firstDiv.classList.add('main')
 
         const main = document.getElementById('main')
+
+        const secondDiv = document.createElement('div')
+
+        main.appendChild(secondDiv)
+
+        secondDiv.setAttribute('id', 'modal')
+        secondDiv.classList.add('modal')
+
+        const thirdDiv = document.createElement('div')
+
+        modal.appendChild(thirdDiv)
+
+        thirdDiv.setAttribute('id', 'header')
+
+        const header = document.getElementById('header')
+
+        const arrow = document.createElement('span')
+
+        arrow.classList.add('icon-arrow-left2')
+
+        header.appendChild(arrow)
 
         const card = e.path[3]
 
@@ -25,7 +46,7 @@ button.forEach(link => {
 
         img.setAttribute('src', imgValue)
 
-        main.appendChild(img)
+        modal.appendChild(img)
         
         const titleElement = imgElement.nextElementSibling
 
@@ -35,13 +56,25 @@ button.forEach(link => {
 
         const title = document.createElement('span')
 
+        title.setAttribute('id', 'test')
+        title.classList.add('modal-title')
+
         title.textContent = titleValue
 
-        main.appendChild(title)
+        modal.appendChild(title)
 
         const description = document.createElement('p')
 
-        main.appendChild(description)
+        description.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus nesciunt voluptatem aliquid eveniet praesentium natus, reiciendis cum tempore, dolore qui pariatur, aspernatur vero impedit non. Dolor quaerat eveniet fugiat sed.'
+
+        modal.appendChild(description)
+
+        const arrowIcon = header.firstElementChild
+
+        arrowIcon.addEventListener('click', () => {
+            main.remove()
+        })
     })
 });
+
 
