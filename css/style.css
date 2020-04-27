@@ -1098,6 +1098,31 @@ body::-webkit-scrollbar-thumb:active {
     grid-column: 1/5;
     grid-row: 2/3;
   }
+  .container .main {
+    grid-column: 1/2;
+    grid-row: 1/6;
+  }
+  .container .main .modal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 60px auto;
+  }
+  .container .main .modal div {
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+  .container .main .modal img {
+    grid-column: 1/2;
+    grid-row: 2/4;
+  }
+  .container .main .modal span {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  .container .main .modal p {
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
 }
 @media screen and (min-width: 992px) {
   header {
@@ -1378,57 +1403,57 @@ body::-webkit-scrollbar-thumb:active {
   z-index: 10;
 }
 .main .modal {
-  background-color: #fff;
+  background-color: #f3f3f3;
   position: fixed;
+  top: 15%;
   width: 100%;
-  height: 80%;
-  border-color: #999;
-  border-style: solid;
-  border-width: 1px;
   overflow-y: auto;
 }
 .main .modal div {
   display: flex;
   align-items: center;
-  padding: 5px 15px;
+  background-color: #f1f1f1;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #e4e4e4;
+  padding: 5px 12px;
 }
 .main .modal div span {
   color: #999;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  padding: 6px;
+  border-radius: 10px;
+}
+.main .modal div span:hover {
+  color: #00b894;
+  background-color: #e2e2e2;
 }
 .main .modal div span:active {
   color: #00b894;
+  background-color: #d8d8d8;
 }
 .main .modal img {
   width: 100%;
-  border-color: #999;
-  border-style: solid;
-  border-width: 1px;
-  border-left: none;
-  border-right: none;
 }
 .main .modal .modal-title {
   color: #00b894;
   font-size: 1.5rem;
   font-family: "Russo One", sans-serif;
   font-weight: 400;
-  text-align: center;
   padding: 5px;
 }
 .main .modal p {
   color: #999;
-  border-top-style: solid;
-  border-top-width: 1px;
-  padding: 5px 15px;
+  padding: 0 15px;
 }
 
-@media screen and (min-width: 650px) and (max-width: 800px) {
+@media screen and (min-width: 650px) and (max-width: 768px) {
   .main .modal {
     height: 100%;
     top: 0;
   }
 }
-@media screen and (min-width: 800px) and (max-width: 950px) {
+@media screen and (min-width: 768px) and (max-width: 991px) {
   .main {
     padding: 20px;
   }
@@ -1437,10 +1462,10 @@ body::-webkit-scrollbar-thumb:active {
     height: 95%;
   }
 }
-@media screen and (min-width: 950px) {
+@media screen and (min-width: 992px) {
   .main .modal {
-    width: 895px;
-    height: 100%;
+    width: 90%;
+    border-radius: 6px;
   }
 }
 .modal::-webkit-scrollbar {
