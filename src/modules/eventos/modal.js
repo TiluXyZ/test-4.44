@@ -1,5 +1,7 @@
 import create from '../funciones/create'
 
+const mediaQuery = window.matchMedia("(min-width: 992px)")
+
 const modal = (e) => {
     e.preventDefault()
     
@@ -9,13 +11,40 @@ const modal = (e) => {
 
     const main = document.getElementById('main')
 
-    create('span', 'id', 'arrow-left', 'icon-chevron-left', main)
-
-    create('span', 'id', 'arrow-right', 'icon-chevron-right', main)
-
     create('div', 'id','modal', 'modal', main)
 
     const modal = document.getElementById('modal')
+
+    create('div', 'id', 'arrows', 'arrows', modal)
+
+    const arrows = document.getElementById('arrows')
+
+    create('div', 'id', 'arrow-l', 'arrow-left', arrows)
+
+    create('div', 'id', 'arrow-r', 'arrow-right', arrows)
+
+    const arrowL = document.getElementById('arrow-l')
+
+    const arrowR = document.getElementById('arrow-r')
+
+    create('span', 'id', 'arrow-left', 'icon-chevron-left', arrowL)
+
+    create('span', 'id', 'arrow-right', 'icon-chevron-right', arrowR)
+
+    const arrowLeft = document.getElementById('arrow-left')
+
+    const arrowRight = document.getElementById('arrow-right')
+
+    if (mediaQuery.matches){
+
+        arrowLeft.classList.replace('icon-chevron-left', 'arrow-l')
+
+        arrowRight.classList.replace('icon-chevron-right', 'arrow-r')
+
+        arrowLeft.textContent = 'Anterior'
+
+        arrowRight.textContent = 'Siguiente'
+    }
 
     create('div', 'id','header', 'header', modal)
 
