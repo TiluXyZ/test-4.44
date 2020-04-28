@@ -9,6 +9,10 @@ const modal = (e) => {
 
     const main = document.getElementById('main')
 
+    create('span', 'id', 'arrow-left', 'icon-chevron-left', main)
+
+    create('span', 'id', 'arrow-right', 'icon-chevron-right', main)
+
     create('div', 'id','modal', 'modal', main)
 
     const modal = document.getElementById('modal')
@@ -47,9 +51,11 @@ const modal = (e) => {
 
     const arrowIcon = header.firstElementChild
 
-    arrowIcon.addEventListener('click', () => {
+    arrowIcon.addEventListener('click', (e) => {
         main.remove()
     })
+
+
 }
 
 export {modal}
