@@ -1,11 +1,12 @@
 import create from '../funciones/create'
-
-const mediaQuery = window.matchMedia("(min-width: 992px)")
+import arrows from './arrows'
 
 const modal = (e) => {
     e.preventDefault()
     
     const container = document.getElementById('container')
+
+    const mediaQuery = window.matchMedia("(min-width: 992px)")
 
     create('div', 'id','main', 'main', container)
 
@@ -17,11 +18,11 @@ const modal = (e) => {
 
     create('div', 'id', 'arrows', 'arrows', modal)
 
-    const arrows = document.getElementById('arrows')
+    const arrowsDiv = document.getElementById('arrows')
 
-    create('div', 'id', 'arrow-l', 'arrow-left', arrows)
+    create('div', 'id', 'arrow-l', 'arrow-left', arrowsDiv)
 
-    create('div', 'id', 'arrow-r', 'arrow-right', arrows)
+    create('div', 'id', 'arrow-r', 'arrow-right', arrowsDiv)
 
     const arrowL = document.getElementById('arrow-l')
 
@@ -54,6 +55,10 @@ const modal = (e) => {
 
     const card = e.path[3]
 
+    const next = card.nextElementSibling;
+
+    const previous = card.previousElementSibling;
+
     const imgElement = card.firstElementChild
 
     const imgValue = imgElement.getAttribute('src')
@@ -82,9 +87,15 @@ const modal = (e) => {
 
     arrowIcon.addEventListener('click', (e) => {
         main.remove()
+    })    
+
+    arrowRight.addEventListener('click', (e) => { 
+        arrows(next, mediaQuery)
     })
 
-
+    arrowLeft.addEventListener('click', (e) => {
+        arrows(previous, mediaQuery)
+    })
 }
 
 export {modal}
