@@ -66,6 +66,8 @@ const modal = (e) => {
         create('div', 'id', 'arrow-r', 'arrow-right', arrowsDiv)
 
         const arrowR = document.getElementById('arrow-r')
+    
+        arrowR.classList.add('first')
 
         create('span', 'id', 'arrow-right', 'icon-chevron-right', arrowR)
 

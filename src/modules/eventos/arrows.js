@@ -52,6 +52,8 @@ const arrows = (direction, mediaQuery) => {
 
         const arrowR = document.getElementById('arrow-r')
 
+        arrowR.classList.add('first')
+
         create('span', 'id', 'arrow-right', 'icon-chevron-right', arrowR)
 
         const arrowRight = document.getElementById('arrow-right')
