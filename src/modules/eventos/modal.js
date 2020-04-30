@@ -8,6 +8,8 @@ const modal = (e) => {
 
     const mediaQuery = window.matchMedia("(min-width: 992px)")
 
+    const card = e.path[3]
+
     create('div', 'id','main', 'main', container)
 
     const main = document.getElementById('main')
@@ -20,40 +22,11 @@ const modal = (e) => {
 
     const arrowsDiv = document.getElementById('arrows')
 
-    create('div', 'id', 'arrow-l', 'arrow-left', arrowsDiv)
-
-    create('div', 'id', 'arrow-r', 'arrow-right', arrowsDiv)
-
-    const arrowL = document.getElementById('arrow-l')
-
-    const arrowR = document.getElementById('arrow-r')
-
-    create('span', 'id', 'arrow-left', 'icon-chevron-left', arrowL)
-
-    create('span', 'id', 'arrow-right', 'icon-chevron-right', arrowR)
-
-    const arrowLeft = document.getElementById('arrow-left')
-
-    const arrowRight = document.getElementById('arrow-right')
-
-    if (mediaQuery.matches){
-
-        arrowLeft.classList.replace('icon-chevron-left', 'arrow-l')
-
-        arrowRight.classList.replace('icon-chevron-right', 'arrow-r')
-
-        arrowLeft.textContent = 'Anterior'
-
-        arrowRight.textContent = 'Siguiente'
-    }
-
     create('div', 'id','header', 'header', modal)
 
     const header = document.getElementById('header')
 
     create('span', 'id','arrow', 'icon-arrow-left2', header)
-
-    const card = e.path[3]
 
     const next = card.nextElementSibling;
 
@@ -89,13 +62,78 @@ const modal = (e) => {
         main.remove()
     })    
 
-    arrowRight.addEventListener('click', (e) => { 
-        arrows(next, mediaQuery)
-    })
+    if (card.getAttribute('class') == 'card-1 card'){
+        create('div', 'id', 'arrow-r', 'arrow-right', arrowsDiv)
 
-    arrowLeft.addEventListener('click', (e) => {
-        arrows(previous, mediaQuery)
-    })
+        const arrowR = document.getElementById('arrow-r')
+
+        create('span', 'id', 'arrow-right', 'icon-chevron-right', arrowR)
+
+        const arrowRight = document.getElementById('arrow-right')
+
+        if (mediaQuery.matches){
+            arrowRight.classList.replace('icon-chevron-right', 'arrow-r')
+    
+            arrowRight.textContent = 'Siguiente'
+        }
+
+        arrowRight.addEventListener('click', (e) => { 
+            arrows(next, mediaQuery)
+        })
+    } else if (card.getAttribute('class') == 'card-36 card'){
+        create('div', 'id', 'arrow-l', 'arrow-left', arrowsDiv)
+
+        const arrowL = document.getElementById('arrow-l')
+
+        create('span', 'id', 'arrow-left', 'icon-chevron-left', arrowL)
+
+        const arrowLeft = document.getElementById('arrow-left')
+
+        if (mediaQuery.matches){
+            arrowLeft.classList.replace('icon-chevron-left', 'arrow-l')
+    
+            arrowLeft.textContent = 'Anterior'
+        }
+
+        arrowLeft.addEventListener('click', (e) => {
+            arrows(previous, mediaQuery)
+        })
+    } else {
+        create('div', 'id', 'arrow-l', 'arrow-left', arrowsDiv)
+
+        create('div', 'id', 'arrow-r', 'arrow-right', arrowsDiv)
+    
+        const arrowL = document.getElementById('arrow-l')
+    
+        const arrowR = document.getElementById('arrow-r')
+    
+        create('span', 'id', 'arrow-left', 'icon-chevron-left', arrowL)
+    
+        create('span', 'id', 'arrow-right', 'icon-chevron-right', arrowR)
+    
+        const arrowLeft = document.getElementById('arrow-left')
+    
+        const arrowRight = document.getElementById('arrow-right')
+    
+        if (mediaQuery.matches){
+    
+            arrowLeft.classList.replace('icon-chevron-left', 'arrow-l')
+    
+            arrowRight.classList.replace('icon-chevron-right', 'arrow-r')
+    
+            arrowLeft.textContent = 'Anterior'
+    
+            arrowRight.textContent = 'Siguiente'
+        }
+
+        arrowRight.addEventListener('click', (e) => { 
+            arrows(next, mediaQuery)
+        })
+    
+        arrowLeft.addEventListener('click', (e) => {
+            arrows(previous, mediaQuery)
+        })
+    }
 }
 
 export {modal}
